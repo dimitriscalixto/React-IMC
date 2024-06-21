@@ -3,6 +3,7 @@ import styles from './App.module.css';
 import poweredImage from './assets/powered.png';
 import { levels, calculateImc, Level } from './helpers/imc';
 import { GridItem } from './components/gridItem';
+import leftarrow from './assets/leftarrow.png'
 const App = () => {
   const [heightField, setHeightField] = useState<number>(0);
   const [weightField, setWeightField] = useState<number>(0);
@@ -13,6 +14,11 @@ const App = () => {
     } else {
       alert('Digite todos os campos');
     }
+  }
+  const handleBackButton = () => {
+    setToShow(null);
+    setHeightField(0);
+    setWeightField(0);
   }
   return (
     <div className={styles.main}>
@@ -51,7 +57,9 @@ const App = () => {
           }
           {toShow &&
             <div className={styles.rightBig}>
-                <div className={styles.rightArrow}></div>
+                <div className={styles.rightArrow} onClick={handleBackButton}>
+                  <img src={leftarrow} alt="" width={25} />
+                </div>
                 <GridItem item={toShow}></GridItem>
             </div>
         
