@@ -41,7 +41,9 @@ header .headerContainer {
   font-size: 14px;
   outline: 0;
 }
-
+.leftSide input:disabled {
+  opacity: .8;
+}
 .leftSide button {
   background-color: #227C9D;
   color: #FFF;
@@ -56,6 +58,10 @@ header .headerContainer {
 }
 .container .leftSide button:hover {
   opacity: .4;
+}
+
+.container .leftSide button:disabled {
+  opacity: .6;
 }
 .container .rightSide {
   flex:1;
@@ -96,5 +102,5 @@ header .headerContainer {
 }
 
 .container .rightSide .rightArrow:hover{
-  opacity: .8;
+  opacity: .5;
 }
